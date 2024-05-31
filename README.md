@@ -1,18 +1,25 @@
 # HelloDag
 
-To start your Phoenix server:
+This demonstrate how to uses Dagger Elixir SDK with the Phoenix application.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Before start
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+You need Dagger 0.11.6+ or higher. And the knowledge of Elixir programming language.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Getting Started
 
-## Learn more
+### Directory layout
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+The Dagger module code living inside `dagger` directory. In that directory, it has
+2 Elixir projects:
+
+- `dagger_sdk` The Dagger SDK.
+- `hello_dag` The Dagger module for `hello_dag` application.
+
+### Running
+
+On the root of this repository, you can run `dagger call test --source=.:default` to
+run unit tests suite in the Phoenix project. The module will spin up the database and 
+configure it for you.
+
+
