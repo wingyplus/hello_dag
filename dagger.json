@@ -2,7 +2,7 @@
   "name": "hello-dag",
   "sdk": "github.com/dagger/dagger/sdk/elixir/runtime",
   "source": "dagger",
-  "engineVersion": "v0.11.6",
+  "engineVersion": "v0.11.8",
   "views": [
     {
       "name": "default",

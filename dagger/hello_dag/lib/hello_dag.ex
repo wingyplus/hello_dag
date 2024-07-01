@@ -65,9 +65,19 @@ defmodule HelloDag do
   end
 
   defp with_base(dag, source) do
+    deps_cache =
+      dag
+      |> Client.cache_volume("app-deps")
+
+    build_cache =
+      dag
+      |> Client.cache_volume("app-build")
+
     dag
     |> Client.container()
     |> Container.from(@elixir_image)
+    |> Container.with_mounted_cache("/app/deps", deps_cache)
+    |> Container.with_mounted_cache("/app/_build", build_cache)
     |> Container.with_mounted_directory("/app", source)
     |> Container.with_workdir("/app")
     |> Container.with_exec(~w[apk add --no-cache git])
